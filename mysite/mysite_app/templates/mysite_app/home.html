@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  </head>
+  <div class="jumbotron" style="background-color:#3732b3">
+    <center>
+      <h1 style="color:aliceblue"> News </h1>
+      <a class='btn btn-danger' href="/">Refresh</a>
+    </center>
+  </div>
+   <div class="row ml-5" style="background-color:#ecf2ff">
+            <div class="col-4">
+              <body>
+                <h1 class="text-centre">The Hacker News</h1>
+                  <body style="background-color:#ecf2ff">
+                    <br>
+                    <hr style="background-color:#3732b3">
+                    {% for news in hackernews_list %}
+                    <p><img src=" {{news.src}} " width="75%" height="75%"></p>
+                    <strong>{{ news.label }}</strong>
+                    <h3> -  {{ news.title }} </h3>
+                    <h5>{{ news.desc }}</h5>
+                    <a class="btn btn-primary" href=" {{ news.url }}">Read more</a>
+                    <hr style="background-color:#3732b3">
+                    {% endfor %}
+                    <br>
+                  </body>
+                    
+              </body>
+            </div>
+
+           <div class="col-4">
+              <body>
+                <h1 class="text-centre">Новини 24</h1>
+                <br>
+                <hr style="background-color:#3732b3">
+                {% for news in news24__list %}
+                <p><img src=" {{news.src}} " width="75%" height="75%"></p>
+                  <strong>{{ news.span }}</strong>
+                <strong>{{ news.post_views }} - переглядів</strong>
+                <h3> - {{ news.title }}</h3>
+                <h5>{{news.t_desc}}</h5>
+                <a class="btn btn-primary" href=" {{ news.url }}">Read more</a>
+                <hr style="background-color:#3732b3">
+                {% endfor %}
+                <br>
+              </body>   
+            </div>
+           <div class="col-4">
+              <body>
+                <h1 class="text-centre">HackSpace</h1>
+                    <br>
+                    <hr style="background-color:#3732b3">
+                    {% for news in hackspace_list %}
+                    <p><img src=" {{news.src}} " width="75%" height="75%"></p>
+                    <strong>{{ news.time }}</strong>
+                    <h3> - {{ news.title }}</h3>
+                    <h5>{{ news.desc }}</h5>
+                    <a class="btn btn-primary" href=" {{ news.url }}">Read more</a>
+                    <hr style="background-color:#3732b3">
+                    {% endfor %}
+                    <br>
+              </body> 
+            </div>
+   </div>
+  <div class="jumbotron" style="background-color:#3732b3">
+    <center>
+      <h1 style="color:aliceblue">Made by Dmytro Hapchenko</h1>
+      <a href="https://www.linkedin.com/in/dmytro-hapchenko-00339a247/">
+        <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
+      </a>
+      <a href="https://github.com/dmytrohapchenko">
+        <img src="https://pngimg.com/uploads/github/github_PNG15.png" alt="GitHub" width="5%" height="5%">
+      </a>
+      <h5 style="color:aliceblue">Для Новини 24 є персональний бот</h5>
+      <a class="btn btn-primary" href="http://t.me/news24_parse_bot">Telegram Bot</a>
+    </center>
+  </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
